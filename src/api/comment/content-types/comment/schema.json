@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comments",
+  "info": {
+    "singularName": "comment",
+    "pluralName": "comments",
+    "displayName": "comment"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "name": {
+      "type": "string"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "saveInfo": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "publishings",
+  "info": {
+    "singularName": "publishing",
+    "pluralName": "publishings",
+    "displayName": "publishing",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pubPolicies": {
+      "type": "blocks"
+    }
+  }
+}

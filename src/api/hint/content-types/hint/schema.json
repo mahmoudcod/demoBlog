@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "hints",
+  "info": {
+    "singularName": "hint",
+    "pluralName": "hints",
+    "displayName": "hint"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "importantHInt": {
+      "type": "text"
+    }
+  }
+}

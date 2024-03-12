@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "policies",
+  "info": {
+    "singularName": "policie",
+    "pluralName": "policies",
+    "displayName": "privacy",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "PrivacyPolicies": {
+      "type": "blocks"
+    }
+  }
+}
