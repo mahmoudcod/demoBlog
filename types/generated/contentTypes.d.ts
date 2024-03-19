@@ -857,6 +857,11 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     >;
     sources: Attribute.RichText;
     contnetArticle: Attribute.RichText;
+    comments: Attribute.Relation<
+      'api::blog.blog',
+      'oneToMany',
+      'api::comment.comment'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
