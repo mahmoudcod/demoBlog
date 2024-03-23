@@ -776,11 +776,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     x: Attribute.String;
     linkedin: Attribute.String;
     show: Attribute.Boolean;
-    posts: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToMany',
-      'api::blog.blog'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -798,19 +793,18 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiAdvertisingAdvertising extends Schema.SingleType {
+export interface ApiAdvertisingAdvertising extends Schema.CollectionType {
   collectionName: 'advertisings';
   info: {
     singularName: 'advertising';
     pluralName: 'advertisings';
-    displayName: 'Advertising';
-    description: '';
+    displayName: 'advertising';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    advertisingPolicies: Attribute.Blocks;
+    police: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -852,7 +846,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     cover: Attribute.Media;
     users_permissions_user: Attribute.Relation<
       'api::blog.blog',
-      'manyToOne',
+      'oneToOne',
       'plugin::users-permissions.user'
     >;
     sources: Attribute.RichText;
