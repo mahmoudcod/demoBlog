@@ -776,6 +776,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     x: Attribute.String;
     linkedin: Attribute.String;
     show: Attribute.Boolean;
+    posts: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::blog.blog'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -846,7 +851,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     cover: Attribute.Media;
     users_permissions_user: Attribute.Relation<
       'api::blog.blog',
-      'oneToOne',
+      'manyToOne',
       'plugin::users-permissions.user'
     >;
     sources: Attribute.RichText;
