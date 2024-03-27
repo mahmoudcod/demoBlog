@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * policie service
+ * police service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::policie.policie');
+module.exports = createCoreService('api::police.police');

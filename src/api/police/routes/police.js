@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * publishing router
+ * police router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::publishing.publishing');
+module.exports = createCoreRouter('api::police.police');

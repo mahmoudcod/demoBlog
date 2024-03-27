@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * policie controller
+ * police controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::policie.policie');
+module.exports = createCoreController('api::police.police');

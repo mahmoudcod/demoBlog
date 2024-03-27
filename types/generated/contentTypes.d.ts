@@ -798,36 +798,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiAdvertisingAdvertising extends Schema.CollectionType {
-  collectionName: 'advertisings';
-  info: {
-    singularName: 'advertising';
-    pluralName: 'advertisings';
-    displayName: 'advertising';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    police: Attribute.Blocks;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::advertising.advertising',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::advertising.advertising',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiBlogBlog extends Schema.CollectionType {
   collectionName: 'blogs';
   info: {
@@ -984,91 +954,32 @@ export interface ApiLogoLogo extends Schema.SingleType {
   };
 }
 
-export interface ApiPoliciePolicie extends Schema.SingleType {
-  collectionName: 'policies';
+export interface ApiPolicePolice extends Schema.SingleType {
+  collectionName: 'polices';
   info: {
-    singularName: 'policie';
-    pluralName: 'policies';
-    displayName: 'privacy';
-    description: '';
+    singularName: 'police';
+    pluralName: 'polices';
+    displayName: 'police';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    PrivacyPolicies: Attribute.Blocks;
+    advertising: Attribute.RichText;
+    publish: Attribute.RichText;
+    useage: Attribute.RichText;
+    privacy: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::policie.policie',
+      'api::police.police',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::policie.policie',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiPublishingPublishing extends Schema.SingleType {
-  collectionName: 'publishings';
-  info: {
-    singularName: 'publishing';
-    pluralName: 'publishings';
-    displayName: 'publishing';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    pubPolicies: Attribute.Blocks;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::publishing.publishing',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::publishing.publishing',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiUsagePoliceUsagePolice extends Schema.SingleType {
-  collectionName: 'usage_polices';
-  info: {
-    singularName: 'usage-police';
-    pluralName: 'usage-polices';
-    displayName: 'usagePolice';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    usagePolice: Attribute.Blocks;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::usage-police.usage-police',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::usage-police.usage-police',
+      'api::police.police',
       'oneToOne',
       'admin::user'
     > &
@@ -1094,15 +1005,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::advertising.advertising': ApiAdvertisingAdvertising;
       'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
       'api::comment.comment': ApiCommentComment;
       'api::hint.hint': ApiHintHint;
       'api::logo.logo': ApiLogoLogo;
-      'api::policie.policie': ApiPoliciePolicie;
-      'api::publishing.publishing': ApiPublishingPublishing;
-      'api::usage-police.usage-police': ApiUsagePoliceUsagePolice;
+      'api::police.police': ApiPolicePolice;
     }
   }
 }

@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "polices",
+  "info": {
+    "singularName": "police",
+    "pluralName": "polices",
+    "displayName": "police"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "advertising": {
+      "type": "richtext"
+    },
+    "publish": {
+      "type": "richtext"
+    },
+    "useage": {
+      "type": "richtext"
+    },
+    "privacy": {
+      "type": "richtext"
+    }
+  }
+}
