@@ -4,7 +4,8 @@
   "info": {
     "singularName": "sub-category",
     "pluralName": "sub-categories",
-    "displayName": "sub-category"
+    "displayName": "sub-category",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,6 +20,12 @@
     },
     "subName": {
       "type": "string"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog.blog",
+      "inversedBy": "sub_categories"
     }
   }
 }

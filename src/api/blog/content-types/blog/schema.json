@@ -60,6 +60,12 @@
       "relation": "manyToMany",
       "target": "api::tag.tag",
       "mappedBy": "posts"
+    },
+    "sub_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sub-category.sub-category",
+      "mappedBy": "posts"
     }
   }
 }

@@ -832,6 +832,11 @@ export interface ApiBlogBlog extends Schema.CollectionType {
       'api::comment.comment'
     >;
     tags: Attribute.Relation<'api::blog.blog', 'manyToMany', 'api::tag.tag'>;
+    sub_categories: Attribute.Relation<
+      'api::blog.blog',
+      'manyToMany',
+      'api::sub-category.sub-category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -999,6 +1004,7 @@ export interface ApiSubCategorySubCategory extends Schema.CollectionType {
     singularName: 'sub-category';
     pluralName: 'sub-categories';
     displayName: 'sub-category';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1010,6 +1016,11 @@ export interface ApiSubCategorySubCategory extends Schema.CollectionType {
       'api::category.category'
     >;
     subName: Attribute.String;
+    posts: Attribute.Relation<
+      'api::sub-category.sub-category',
+      'manyToMany',
+      'api::blog.blog'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
