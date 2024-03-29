@@ -26,6 +26,11 @@
       "relation": "manyToMany",
       "target": "api::blog.blog",
       "inversedBy": "sub_categories"
+    },
+    "slug": {
+      "type": "uid",
+      "required": true,
+      "targetField": "subName"
     }
   }
 }

@@ -1138,6 +1138,8 @@ export interface ApiSubCategorySubCategory extends Schema.CollectionType {
       'manyToMany',
       'api::blog.blog'
     >;
+    slug: Attribute.UID<'api::sub-category.sub-category', 'subName'> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
