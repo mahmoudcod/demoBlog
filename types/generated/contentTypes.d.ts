@@ -1036,6 +1036,7 @@ export interface ApiContactUsContactUs extends Schema.CollectionType {
     singularName: 'contact-us';
     pluralName: 'contact-uses';
     displayName: 'contactUs';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -1043,8 +1044,8 @@ export interface ApiContactUsContactUs extends Schema.CollectionType {
   attributes: {
     name: Attribute.String;
     email: Attribute.Email;
-    phone: Attribute.String;
     message: Attribute.Text;
+    phone: Attribute.BigInteger;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
