@@ -31,6 +31,9 @@
       "type": "uid",
       "required": true,
       "targetField": "subName"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }

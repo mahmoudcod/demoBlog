@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_uses",
+  "info": {
+    "singularName": "contact-us",
+    "pluralName": "contact-uses",
+    "displayName": "contactUs"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": false
+    },
+    "phone": {
+      "type": "biginteger",
+      "required": false
+    },
+    "eamil": {
+      "type": "email",
+      "required": false
+    },
+    "message": {
+      "type": "text"
+    }
+  }
+}
