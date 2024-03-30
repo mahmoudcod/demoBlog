@@ -1038,16 +1038,15 @@ export interface ApiContactUsContactUs extends Schema.CollectionType {
     displayName: 'contactUs';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     name: Attribute.String;
-    phone: Attribute.BigInteger;
-    eamil: Attribute.Email;
+    email: Attribute.Email;
+    phone: Attribute.String;
     message: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::contact-us.contact-us',
       'oneToOne',
