@@ -1066,6 +1066,48 @@ export interface ApiContactUsContactUs extends Schema.CollectionType {
   };
 }
 
+export interface ApiFooterFooter extends Schema.SingleType {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: 'footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    categories: Attribute.Relation<
+      'api::footer.footer',
+      'oneToMany',
+      'api::category.category'
+    >;
+    sub_categories: Attribute.Relation<
+      'api::footer.footer',
+      'oneToMany',
+      'api::sub-category.sub-category'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    sitemap_exclude: Attribute.Boolean &
+      Attribute.Private &
+      Attribute.DefaultTo<false>;
+  };
+}
+
 export interface ApiHintHint extends Schema.SingleType {
   collectionName: 'hints';
   info: {
@@ -1249,6 +1291,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::comment.comment': ApiCommentComment;
       'api::contact-us.contact-us': ApiContactUsContactUs;
+      'api::footer.footer': ApiFooterFooter;
       'api::hint.hint': ApiHintHint;
       'api::logo.logo': ApiLogoLogo;
       'api::police.police': ApiPolicePolice;
