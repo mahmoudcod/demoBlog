@@ -790,6 +790,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::blog.blog'
     >;
+    slug: Attribute.UID<'plugin::users-permissions.user', 'username'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -842,50 +843,6 @@ export interface PluginSchedulerScheduler extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'plugin::scheduler.scheduler',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
-  };
-}
-
-export interface PluginPublisherAction extends Schema.CollectionType {
-  collectionName: 'actions';
-  info: {
-    singularName: 'action';
-    pluralName: 'actions';
-    displayName: 'actions';
-  };
-  options: {
-    draftAndPublish: false;
-    comment: '';
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    executeAt: Attribute.DateTime;
-    mode: Attribute.String;
-    entityId: Attribute.Integer;
-    entitySlug: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'plugin::publisher.action',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'plugin::publisher.action',
       'oneToOne',
       'admin::user'
     > &
@@ -1020,7 +977,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
       'manyToMany',
       'api::sub-category.sub-category'
     >;
-    slug: Attribute.UID<'api::blog.blog', 'title'> & Attribute.Required;
+    slug: Attribute.UID<'api::blog.blog', 'title'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1333,6 +1290,7 @@ export interface ApiTagTag extends Schema.CollectionType {
     singularName: 'tag';
     pluralName: 'tags';
     displayName: 'tag';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1340,6 +1298,7 @@ export interface ApiTagTag extends Schema.CollectionType {
   attributes: {
     name: Attribute.String;
     posts: Attribute.Relation<'api::tag.tag', 'manyToMany', 'api::blog.blog'>;
+    slug: Attribute.UID<'api::tag.tag', 'name'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1372,7 +1331,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::scheduler.scheduler': PluginSchedulerScheduler;
-      'plugin::publisher.action': PluginPublisherAction;
       'plugin::sitemap.sitemap': PluginSitemapSitemap;
       'plugin::sitemap.sitemap-cache': PluginSitemapSitemapCache;
       'api::blog.blog': ApiBlogBlog;
