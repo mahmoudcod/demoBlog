@@ -1207,6 +1207,7 @@ export interface ApiPolicePolice extends Schema.SingleType {
     singularName: 'police';
     pluralName: 'polices';
     displayName: 'police';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1216,6 +1217,7 @@ export interface ApiPolicePolice extends Schema.SingleType {
     publish: Attribute.RichText;
     useage: Attribute.RichText;
     privacy: Attribute.RichText;
+    about: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
