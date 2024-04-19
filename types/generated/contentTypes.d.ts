@@ -1017,6 +1017,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     >;
     slug: Attribute.UID<'api::category.category', 'name'> & Attribute.Required;
     description: Attribute.Text;
+    isShow: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
