@@ -1089,7 +1089,7 @@ export interface ApiContactUsContactUs extends Schema.CollectionType {
     name: Attribute.String;
     email: Attribute.Email;
     message: Attribute.Text;
-    phone: Attribute.BigInteger;
+    phone: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
