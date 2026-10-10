@@ -29,5 +29,13 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  publisher: {
+    enabled: true,
+
+  },
+  scheduler: {
+    enabled: true,
+
+  },
   // ...
 });

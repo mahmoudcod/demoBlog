@@ -68,9 +68,8 @@
       "mappedBy": "posts"
     },
     "slug": {
-      "type": "uid",
-      "targetField": "title",
-      "required": false
+      "type": "string",
+      "unique": true
     }
   }
 }
